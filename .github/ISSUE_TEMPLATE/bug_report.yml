@@ -1,0 +1,167 @@
+name: Signalement de bug
+description: Signaler un comportement incorrect ou inattendu du jeu
+labels: ["Statut: ouvert"]
+assignees:
+  - Nyfos
+body:
+  - type: markdown
+    attributes:
+      value: |
+          Si vous avez une question, rendez-vous sur notre serveur Discord: https://discord.gg/RGRq9kwQx8
+          Merci de prendre le temps de remplir ce signalement de bug 🙏🏽
+  - type: checkboxes
+    attributes:
+      label: Est-ce qu'un signalement a déjà été créé pour ça?
+      description: Veuillez vérifier qu'aucun signalement ne correspond au bug que vous venez de rencontrer
+      options:
+      - label: J'ai recherché un signalement similaire au mien mais n'ai rien trouvé
+        required: true
+  - type: textarea
+    id: summary
+    attributes:
+      label: Que s'est-t-il passé?
+      description: |
+        Décrivez le problème de la façon la plus détaillée possible.
+        Votre explication doit être:
+        - Concise - Fournissez le moins d'informations possible pour reproduire le bug
+        - Complète - Fournissez toutes les étapes dont quelqu'un d'autre a besoin pour reproduire le bug
+        - Reproductible - Testez les étapes que vous vous apprêtez à fournir pour être sûr qu'elles reproduisent le bug
+
+        Conseil: Vous pouvez joindre des images ou des fichiers en cliquant sur cette zone pour la mettre en surbrillance, puis en y faisant glisser des fichiers.
+      placeholder: |
+        Le coffre devient invisible après avoir été ouvert lorsque l'on réouvre le jeu
+    validations:
+      required: true
+  - type: textarea
+    id: steps_to_reproduce
+    attributes:
+      label: Étapes pour reproduire le bug
+      description: |
+        Indiquez les étapes nécessaires aux développeurs pour pouvoir reproduire le bug.
+        Conseil: Vous pouvez joindre des images ou des fichiers en cliquant sur cette zone pour la mettre en surbrillance, puis en y faisant glisser des fichiers.
+      placeholder: |
+        Étapes pour reproduire le bug:
+        1. Ouvrir le coffre
+        2. Récupérer le contenu du coffre
+        3. Sauvegarder puis quitter le jeu
+        4. Charger la sauvegarde
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Résultat attendu
+      description: |
+        À quoi vous attendiez-vous? Selon vous, qu'aurait-il dû se passer s'il n'y avait pas eu le bug?
+      placeholder: |
+        Le coffre devrait être visible et ouvert
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Résultat actuel
+      description: |
+        Quel se passe-t-il actuellement?
+      placeholder: |
+        Le coffre n'apparait pas
+    validations:
+      required: true
+  - type: dropdown
+    id: frequency
+    attributes:
+      label: Fréquence
+      description: "Est-ce que ce problème survient fréquemment? Est-ce la première fois?"
+      options:
+        - C'est la première fois
+        - Parfois
+        - Souvent
+        - Toujours
+    validations:
+      required: true
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Gravité du problème
+      description: "Conseil: vous pouvez vous référer au [guide](https://github.com/Nyfos/MahokuTesters#quelle-gravit%C3%A9-appliquer-pour-mon-signalement-de-bug) pour choisir la gravité adaptée"
+      options:
+        - Banale
+        - Mineure
+        - Majeure
+        - Critique
+        - Blocage
+    validations:
+      required: true
+  - type: textarea
+    id: workaround
+    attributes:
+      label: Solution de contournement
+      description: |
+        Avez-vous trouvé une solution pour contourner temporairement ce problème?
+      placeholder: |
+        Sauvegarder le jeu avant de récupérer le contenu du coffre, et pas après
+  - type: textarea
+    id: solution
+    attributes:
+      label: Solution proposée
+      description: |
+        Quelle solution proposez-vous pour résoudre ce problème?
+      placeholder: |
+        Charger la texture du coffre à la fin de la sauvegarde
+  - type: dropdown
+    id: frequency
+    attributes:
+      label: Fréquence
+      description: "Est-ce que ce problème survient fréquemment? Est-ce la première fois?"
+      options:
+        - C'est la première fois
+        - Parfois
+        - Souvent
+        - Toujours
+    validations:
+      required: true
+  - type: dropdown
+    id: os
+    attributes:
+      label: Système d'exploitation
+      description: |
+        Sur quel(s) système(s) d'exploitation rencontrez-vous ce problème?
+        Si vous ne connaissez pas votre système d'exploitation, ne sélectionnez rien.
+        
+        Conseil: vous pouvez sélectionner plusieurs systèmes d'exploitation
+      options:
+        - Windows
+        - Android
+        - GNU/Linux
+        - macOS
+        - iOS
+        - Autre
+  - type: input
+    id: dev-release
+    attributes:
+      label: Identifiant de la version sur laquelle vous avez rencontré le bug
+      placeholder: 1.0.0-alpha.1
+      description: |
+        Le problème est peut-être déjà résolu dans une version de développement récente.
+        Vous pouvez le tester sur une version plus récente pour savoir s'il a été résolu.
+  - type: textarea
+    id: log
+    attributes:
+      label: Ajoutez votre fichier de logs au signalement
+      description: |
+        Si vous le pouvez, merci de bien vouloir ajouter votre fichier de logs en cliquant sur cette zone pour la mettre en surbrillance, puis en y faisant glisser le fichier.
+        Plus d'informations sur l'emplacement du fichier de logs sont disponibles dans le [guide](https://github.com/Nyfos/MahokuTesters/blob/main/README.md#o%C3%B9-trouver-mon-fichier-de-logs-et-comment-lajouter-%C3%A0-mon-signalement).
+      placeholder: |
+        <Ajoutez votre fichier de logs ici>
+  - type: textarea
+    id: more
+    attributes:
+      label: Notes personnelles
+      description: "Si vous le souhaitez, vous pouvez ajotuer des notes supplémentaires à votre signalement"
+  - type: markdown
+    attributes:
+      value: |
+          - [x] Bug signalé
+          - [ ] Bug en cours d'étude
+          - [ ] Correction en cours de validation
+          - [ ] Bug résolu
