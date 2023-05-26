@@ -10,6 +10,7 @@ body:
           Si vous avez une question, rendez-vous sur notre serveur Discord: https://discord.gg/RGRq9kwQx8
           Merci de prendre le temps de remplir ce signalement de bug 🙏🏽
   - type: checkboxes
+    id: search-checked
     attributes:
       label: Est-ce qu'un signalement a déjà été créé pour ça?
       description: Veuillez vérifier qu'aucun signalement ne correspond au bug que vous venez de rencontrer
