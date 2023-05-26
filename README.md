@@ -46,6 +46,20 @@ Si vous hésitez lors du choix de la gravité du bug trouvé, n'hésitez pas à 
 | Mineure | N'influence ni les fonctions de base de l'application ni le processus de test | Le texte ne tient pas dans une barre séparée, il y a une césure incorrecte, un espace manquant à un endroit particulier, etc. |
 | Banale | A peu d'impact sur le fonctionnement du jeu. On trouve généralement ce type de bug au cours des tests d'interface utilisateur | Mauvaise taille d'un bouton, couleur trop vive d'un objet, etc. |
 
+### Où trouver mon fichier de logs et comment l'ajouter à mon signalement?
+
+Voici l'emplacement du fichier de logs pour chaque système d'exploitation:
+Utilisez la combinaison de touches de la colonnes "Raccourci" puis entrez l'emplacement du fichier de logs. Appuyez ensuite sur Entrée ou OK pour accéder au dossier content le fichier de logs.
+| Système d'exploitation | Emplacement | Nom du fichier | Raccourci |
+| :--- | :--- | :--- | :--- |
+| Windows | `%USERPROFILE%\AppData\LocalLow\Mahoku\Mahoku\` | `Player.log` | <kbd>⊞ Win</kbd> + <kbd>R</kbd> |
+| Plateformes Universelles Windows (UWP) | `%USERPROFILE%\AppData\Local\Packages\Mahoku\TempState\` | `UnityPlayer.log` | <kbd>⊞ Win</kbd> + <kbd>R</kbd> |
+| Linux | `~/.config/unity3d/Mahoku/Mahoku/` | `Player.log` | <kbd>Ctrl</kbd> + <kbd>F10</kbd> <kbd>E</kbd> |
+| MacOS | `~/Library/Logs/Mahoku/Mahoku/` | `Player.log` | - |
+
+Lorsque vous envoyez votre signalement, une zone de texte située à la fin de votre signalement vous permet d'ajouter un fichier de logs.
+Cliquez sur cette zone pour la mettre en surbrillance puis glissez-y simplement le fichier pour l'ajouter à votre signalement.
+
 ## Demandes d'ajout de nouvelles fonctionnalités
 
 Les demandes d'ajout de fonctionnalités sont les bienvenues. Mais prenez un moment pour savoir
