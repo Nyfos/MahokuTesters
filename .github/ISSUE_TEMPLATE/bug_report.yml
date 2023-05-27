@@ -110,18 +110,6 @@ body:
       placeholder: |
         Charger la texture du coffre à la fin de la sauvegarde
   - type: dropdown
-    id: frequency
-    attributes:
-      label: Fréquence
-      description: "Est-ce que ce problème survient fréquemment? Est-ce la première fois?"
-      options:
-        - C'est la première fois
-        - Parfois
-        - Souvent
-        - Toujours
-    validations:
-      required: true
-  - type: dropdown
     id: os
     attributes:
       label: Système d'exploitation
@@ -159,4 +147,10 @@ body:
     attributes:
       label: Notes personnelles
       description: "Si vous le souhaitez, vous pouvez ajotuer des notes supplémentaires à votre signalement"
-
+  - type: markdown
+    attributes:
+      value: |
+          - [x] Bug signalé
+          - [ ] Bug en cours d'étude
+          - [ ] Correction en cours de validation
+          - [ ] Bug résolu
