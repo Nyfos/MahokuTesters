@@ -159,10 +159,4 @@ body:
     attributes:
       label: Notes personnelles
       description: "Si vous le souhaitez, vous pouvez ajotuer des notes supplémentaires à votre signalement"
-  - type: markdown
-    attributes:
-      value: |
-          - [x] Bug signalé
-          - [ ] Bug en cours d'étude
-          - [ ] Correction en cours de validation
-          - [ ] Bug résolu
+
