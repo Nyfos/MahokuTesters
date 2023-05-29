@@ -151,7 +151,7 @@ body:
     attributes:
       value: |
           ## Statut actuel du signalement
-          - [x] Bug signalé
-          - [ ] Bug en cours d'étude
-          - [ ] Correction en cours de validation
-          - [ ] Bug résolu
+            - [x] Bug signalé
+            - [ ] Bug en cours d'étude
+            - [ ] Correction en cours de validation
+            - [ ] Bug résolu
