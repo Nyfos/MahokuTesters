@@ -15,7 +15,7 @@ De bons rapports de bugs sont extrêmement utiles - merci ! 🙏
 3. **Isolez le problème** &mdash; réduisez au minimum le nombre d'étapes nécessaires pour produire le bug et ciblez la nature de celui-ci.
 
 Un bon rapport de bug ne devrait pas obliger les autres à vous courir après pour obtenir plus d'informations.
-Veuillez essayer de détailler autant que possible votre rapport. Quelle machine utilisez-vous et avez quels paramètres? Quelles étapes permetteront de reproduire le bug? Avec quel système d'exploitation rencontrez-vous le problème? À quoi vous attendiez-vous? Tous ces petits détails aideront d'avantage les développeurs à corriger les bugs potentiels.
+Veuillez essayer de détailler autant que possible votre rapport. Quelle machine utilisez-vous et avec quels paramètres? Quelles étapes permettront de reproduire le bug? Avec quel système d'exploitation rencontrez-vous le problème? À quoi vous attendiez-vous? Tous ces petits détails aideront d'avantage les développeurs à corriger les bugs potentiels.
 
 ### Exemple:
 
@@ -41,7 +41,7 @@ Si vous hésitez lors du choix de la gravité du bug trouvé, n'hésitez pas à 
 | Gravité | Description | Exemples |
 | :--- | :--- | :--- |
 | Blocage | Empêche la poursuite des tests lorsque le jeu plante à cause d'un bug | Le jeu se ferme lorsqu'on complète la première quête |
-| Critique | Concerne la sécurité du jeu et conduis à l'arrêt d'un programme, à la parte de données, ou à tout autre dommage important. De tels bugs nuisent aux fonctionnalités principales de l'application et sont résolus en priorité | La sauvegarde n'enregistre que la position du joueur |
+| Critique | Concerne la sécurité du jeu et conduit à l'arrêt d'un programme, à la perte de données, ou à tout autre dommage important. De tels bugs nuisent aux fonctionnalités principales de l'application et sont résolus en priorité | La sauvegarde n'enregistre que la position du joueur |
 | Majeure | Affecte négativement une grande partie du jeu que l'on est en train de tester | Par exemple, lorsque l'on teste les traductions: lettres non affichées, omissions systématiques d'espaces, texte dépassant des limites de l'écran, texte non traduit, etc. |
 | Mineure | N'influence ni les fonctions de base de l'application ni le processus de test | Le texte ne tient pas dans une barre séparée, il y a une césure incorrecte, un espace manquant à un endroit particulier, etc. |
 | Banale | A peu d'impact sur le fonctionnement du jeu. On trouve généralement ce type de bug au cours des tests d'interface utilisateur | Mauvaise taille d'un bouton, couleur trop vive d'un objet, etc. |
@@ -49,7 +49,9 @@ Si vous hésitez lors du choix de la gravité du bug trouvé, n'hésitez pas à 
 ### Où trouver mon fichier de logs et comment l'ajouter à mon signalement?
 
 Voici l'emplacement du fichier de logs pour chaque système d'exploitation:
-Utilisez la combinaison de touches de la colonnes "Raccourci" puis entrez l'emplacement du fichier de logs. Appuyez ensuite sur Entrée ou OK pour accéder au dossier contenant le fichier de logs.
+
+Utilisez la combinaison de touches de la colonne "Raccourci" puis entrez l'emplacement du fichier de logs. Appuyez ensuite sur Entrée ou OK pour accéder au dossier contenant le fichier de logs.
+
 | Système d'exploitation | Emplacement | Nom du fichier | Raccourci |
 | :--- | :--- | :--- | :--- |
 | Windows | `%USERPROFILE%\AppData\LocalLow\Mahoku\Mahoku\` | `Player.log` | <kbd>⊞ Win</kbd> + <kbd>R</kbd> |
