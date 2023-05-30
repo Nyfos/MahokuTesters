@@ -4,18 +4,9 @@ on:
   issues:
     - opened
 jobs:
-  auto-response:
-    name: Réponse automatique
-    runs-on: ubuntu-latest
-    if: contains(github.event.issue.body, "généré automatiquement") == false
-    steps:
-      - uses: peter-evans/create-or-update-comment@5f728c3dae25f329afbe34ee4d08eef25569d79f
-        with:
-          issue-number: ${{ github.event.issue.number }}
-          body: |
-            Merci beaucoup d'avoir pris le temps de remplir ce signalement! :sparkles:
   add-labels:
     name: Ajout des labels appropriés
+    if: contains(github.event.issue.body, "généré automatiquement") == false
     runs-on: ubuntu-latest
     permissions:
       issues: write
@@ -60,3 +51,13 @@ jobs:
               issue_number: issueNumber,
               labels: [labelsToAdd]
             });
+  auto-response:
+    name: Réponse automatique
+    if: contains(github.event.issue.body, "généré automatiquement") == false
+    runs-on: ubuntu-latest
+    steps:
+      - uses: peter-evans/create-or-update-comment@5f728c3dae25f329afbe34ee4d08eef25569d79f
+        with:
+          issue-number: ${{ github.event.issue.number }}
+          body: |
+            Merci beaucoup d'avoir pris le temps de remplir ce signalement! :sparkles:
