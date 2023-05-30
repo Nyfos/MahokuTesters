@@ -42,14 +42,14 @@ Si vous hésitez lors du choix de la gravité du bug trouvé, n'hésitez pas à 
 | :--- | :--- | :--- |
 | Blocage | Empêche la poursuite des tests lorsque le jeu plante à cause d'un bug | Le jeu se ferme lorsqu'on complète la première quête |
 | Critique | Concerne la sécurité du jeu et conduis à l'arrêt d'un programme, à la parte de données, ou à tout autre dommage important. De tels bugs nuisent aux fonctionnalités principales de l'application et sont résolus en priorité | La sauvegarde n'enregistre que la position du joueur |
-| Majeure | Affecte négativement une grande partie du jeu que l'on est en train de te. | Par exemple, lorsque l'on teste les traductions: lettres non affichées, omissions systématiques d'espaces, texte dépassant des limites de l'écran, texte non traduit, etc. |
+| Majeure | Affecte négativement une grande partie du jeu que l'on est en train de tester | Par exemple, lorsque l'on teste les traductions: lettres non affichées, omissions systématiques d'espaces, texte dépassant des limites de l'écran, texte non traduit, etc. |
 | Mineure | N'influence ni les fonctions de base de l'application ni le processus de test | Le texte ne tient pas dans une barre séparée, il y a une césure incorrecte, un espace manquant à un endroit particulier, etc. |
 | Banale | A peu d'impact sur le fonctionnement du jeu. On trouve généralement ce type de bug au cours des tests d'interface utilisateur | Mauvaise taille d'un bouton, couleur trop vive d'un objet, etc. |
 
 ### Où trouver mon fichier de logs et comment l'ajouter à mon signalement?
 
 Voici l'emplacement du fichier de logs pour chaque système d'exploitation:
-Utilisez la combinaison de touches de la colonnes "Raccourci" puis entrez l'emplacement du fichier de logs. Appuyez ensuite sur Entrée ou OK pour accéder au dossier content le fichier de logs.
+Utilisez la combinaison de touches de la colonnes "Raccourci" puis entrez l'emplacement du fichier de logs. Appuyez ensuite sur Entrée ou OK pour accéder au dossier contenant le fichier de logs.
 | Système d'exploitation | Emplacement | Nom du fichier | Raccourci |
 | :--- | :--- | :--- | :--- |
 | Windows | `%USERPROFILE%\AppData\LocalLow\Mahoku\Mahoku\` | `Player.log` | <kbd>⊞ Win</kbd> + <kbd>R</kbd> |
