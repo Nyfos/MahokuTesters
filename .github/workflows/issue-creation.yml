@@ -2,7 +2,8 @@ name: issue-creation
 run-name: ${{ github.actor }} est en train de créer un signalement
 on:
   issues:
-    - opened
+    types:
+      - opened
 jobs:
   add-labels:
     name: Ajout des labels appropriés
