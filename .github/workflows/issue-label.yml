@@ -1,0 +1,43 @@
+name: issue-label
+run-name: Un label a été ajouté à un signalement
+on:
+  issues:
+    types:
+      - labeled
+jobs:
+  comment:
+    name: Envoi d'un message automatique
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - name: Demande d'informations supplémentaires
+        if: contains(github.event.label.name, "informations nécessaires")
+        uses: peter-evans/create-or-update-comment@5f728c3dae25f329afbe34ee4d08eef25569d79f
+        with:
+          issue-number: ${{ github.event.issue.number }}
+          body: |
+            @${{ github.event.issue.user.login }}, nous avons besoin d'informations supplémentaires à propos de votre signalement pour pouvoir continuer.
+            Merci de votre collaboration! :pray:
+      - name: Bug non reproductible
+        if: contains(github.event.label.name, "non reproductible")
+        uses: peter-evans/create-or-update-comment@5f728c3dae25f329afbe34ee4d08eef25569d79f
+        with:
+          issue-number: ${{ github.event.issue.number }}
+          body: |
+            @${{ github.event.issue.user.login }}, le bug que vous avez signalé n'a pas pu être reproduit pas notre équipe.
+            Veuillez vérifier que vous arrivez à reproduire le bug en suivant uniquement les étapes que vous avez indiqué dans votre signalement.
+            
+            Merci de votre collaboration! :pray:
+      - name: Pas un bug
+        if: contains(github.event.label.name, "pas un bug")
+        uses: peter-evans/create-or-update-comment@5f728c3dae25f329afbe34ee4d08eef25569d79f
+        with:
+          issue-number: ${{ github.event.issue.number }}
+          body: |
+            @${{ github.event.issue.user.login }}, votre signalement n'a pas l'air d'être un bug.
+            Il semblerait qu'il s'agisse du comportement normal du jeu, et non d'un comportement inattendu de celui-ci.
+            
+            Il est inutile de réouvrir un signalement pour ceci. Cependant, vous pouvez créer une suggestion si vous considérez qu'il faudrait modifier le comportement du jeu.
+            
+            Merci de votre collaboration! :pray:
