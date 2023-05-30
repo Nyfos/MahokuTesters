@@ -61,3 +61,14 @@ jobs:
           issue-number: ${{ github.event.issue.number }}
           body: |
             Merci beaucoup d'avoir pris le temps de remplir ce signalement! :sparkles:
+  auto-bot-response:
+    name: Réponse automatique à un signalement généré automatiquement
+    if: contains(github.event.issue.body, "généré automatiquement")
+    runs-on: ubuntu-latest
+    steps:
+      - uses: peter-evans/create-or-update-comment@5f728c3dae25f329afbe34ee4d08eef25569d79f
+        with:
+          issue-number: ${{ github.event.issue.number }}
+          body: |
+            Ce signalement automatique a bien été enregistré.
+            Vous êtes libre de modifier le signalement ou d'y répondre pour apporter toute autre information ou modification.
