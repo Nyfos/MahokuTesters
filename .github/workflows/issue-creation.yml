@@ -1,0 +1,62 @@
+name: issue-creation
+run-name: ${{ github.actor }} est en train de créer un signalement
+on:
+  issues:
+    - opened
+jobs:
+  auto-response:
+    name: Réponse automatique
+    runs-on: ubuntu-latest
+    if: contains(github.event.issue.body, "généré automatiquement") == false
+    steps:
+      - uses: peter-evans/create-or-update-comment@5f728c3dae25f329afbe34ee4d08eef25569d79f
+        with:
+          issue-number: ${{ github.event.issue.number }}
+          body: |
+            Merci beaucoup d'avoir pris le temps de remplir ce signalement! :sparkles:
+  add-labels:
+    name: Ajout des labels appropriés
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - name: Ajout des labels de base
+        run: |
+          array=(${{ env.LABELS }})
+          array+=("Statut: ouvert")
+          echo "LABELS=${array[*]}" >> $GITHUB_ENV
+      - name: Ajout des labels dynamiques
+        run: |
+          array=(${{ env.LABELS }})
+          
+          frequency=$(echo ${{ env.data.frequence.text }} | tr '[:upper:]' '[:lower:]')
+          array+=("Priorité: $frequency")
+          
+          gravity=$(echo ${{ env.data.gravite-du-probleme.text }} | tr '[:upper:]' '[:lower:]')
+          array+=("Gravité: $gravity")
+
+          echo "LABELS=${array[*]}" >> $GITHUB_ENV
+      - name: Ajout d'un label pour Windows
+        if: contains(${{ env.data.systeme-d-exploitation.text }}, "Windows")
+        run: |
+          array=(${{ env.LABELS }})
+          array+=("OS: Windows")
+          echo "LABELS=${array[*]}" >> $GITHUB_ENV
+      - name: Enregistrement des labels ajoutés
+        uses: actions/github-script@v4
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const labelsToAdd = process.env.ARRAY_NAME.split(','); // Récupérer les labels du tableau
+
+            const issue = context.payload.issue;
+            const issueNumber = issue.number;
+            const owner = issue.repository.owner.login;
+            const repo = issue.repository.name;
+
+            await github.issues.addLabels({
+              owner: owner,
+              repo: repo,
+              issue_number: issueNumber,
+              labels: [labelsToAdd]
+            });
