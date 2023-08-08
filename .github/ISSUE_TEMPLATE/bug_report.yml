@@ -17,6 +17,14 @@ body:
       options:
       - label: J'ai recherché un signalement similaire au mien mais n'ai rien trouvé
         required: true
+  - type: input
+    id: automaticIssueID
+    attributes:
+      label: Identifiant de votre signalement automatique
+      placeholder: #123
+      description: |
+        Mahoku a peut-être créé automatique un signalement si vous avez relié votre compte GitHub en jeu.
+        Si un signalement automatique a été créé, merci d'entrer son identifiant ici.
   - type: textarea
     id: summary
     attributes:
